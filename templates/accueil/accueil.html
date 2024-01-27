@@ -1,0 +1,115 @@
+{% extends 'main.html'%}
+{% load static %}
+        
+{% block content %}
+<br>
+<div class="row">
+	<div  class="col-md-8">
+		<center><h1><B>Actualités:</B></h1></center>
+		<br>
+		<div style="background-color: rgb(244, 246, 246, 0.7);" class="card card-body">
+			<ul>
+					<a href="{% static 'pdf/Discours_Paul_Biya.pdf' %}" target="_blank"><li> Discours de fin d'année du Président de la république</li></a>
+					<a href="{% static 'pdf/IPR.pdf' %}"><li> Nomination des IPR</li></a>
+					<a href="{% static 'pdf/Proviseur_Lycee_ESG.pdf' %}"><li> Nomination des Proviseurs ESG</li></a>
+					<a href="{% static 'pdf/Proviseur_Lycee_EST.pdf' %}"><li> Nomination des Proviseurs EST</li></a>
+					<a href=""><li> Nomination des Censeurs ESG</li></a>
+					<a href=""><li> Nomination des Cenceurs EST</li></a>
+					<a href="{% static 'pdf/Lycee_ESG.pdf' %}"><li> Nomination des Surveillants généraux ESG</li></a>
+					<a href=""><li> Nomination des Surveillants généraux EST</li></a>
+					<a href="{% static 'pdf/necessite_serivice_08 Dec 2023.pdf' %}"><li> Mutations </li></a>
+					<a href=""><li> Actualités de la DRES Adamaoua</li></a>
+					<a href="{% static 'pdf/STATUTS CRAIE SOLIDAIRE VINA.pdf' %}"><li> Actualités de la Craie Solidaire Vina </li></a>
+				<!-- {% for files in filess %}
+				<a href="{% url 'pdfread' files.id%}"><li> {{files.title}}</li></a>
+				{% endfor %} -->
+			</ul>
+		</div>
+	</div>
+
+
+	<div class="col-md-4">
+		<br>
+		<br>
+		<br>
+		<br>
+		<div  style="background-color: rgb(244, 246, 246);"  class="card card-body">
+			<center><h4> Nombre de membres </h4></center>
+					<h3> <center><B>{{total_membre}}</B></center></h3>
+				
+					<center><h4> Membres en ligne </h4></center>
+					<h3><center><B> {{online_users_count }} </B></center></h3>
+		</div>
+	</div>
+
+</div>
+
+<!-- <br>
+<div class="global">
+	<div class="contenu">
+		<div class="left">
+			<h3><b>Actualités</b></h3>
+		<ul>
+			<a href=""><li> Discours de fin d'année du Président de la république</li></a>
+			<a href=""><li> Nommination des IPR</li></a>
+			<a href=""><li> Nommination des Proviseurs ESG</li></a>
+			<a href=""><li> Nommination des Proviseurs EST</li></a>
+			<a href=""><li> Nommination des Censeurs ESG</li></a>
+			<a href=""><li> Nommination des Cenceurs EST</li></a>
+			<a href=""><li> Nommination des Surveillants généraux ESG</li></a>
+			<a href=""><li> Nommination des Surveillants généraux EST</li></a>
+			<a href=""><li> Mutations </li></a>
+			<a href=""><li> Actualités de la DRES Adamaoua</li></a>
+			<a href=""><li> Actualités de la Craie Solidaire Vina </li></a>
+		</ul>
+		</div>
+	</div>
+</div>
+
+<div class="right">
+	<h4> Nombre de membres </h4>
+	<h3> <B>{{total_utilisateur}}</B></h3>
+	<h4> Membres en ligne </h4>
+	<h3><B>{{total_versement}}</B></h3>
+</div>
+ -->
+
+<!-- 
+
+<table border="0" size="100%">
+
+	<tr>
+
+	  <td size="20%" valign="top" align="left">
+		<center><h3><b>Actualités</b></h3></center>
+		<hr>
+		<ul>
+			<a href=""><li> Discours de fin d'année du Président de la république</li></a>
+			<a href=""><li> Nommination des IPR</li></a>
+			<a href=""><li> Nommination des Proviseurs ESG</li></a>
+			<a href=""><li> Nommination des Proviseurs EST</li></a>
+			<a href=""><li> Nommination des Censeurs ESG</li></a>
+			<a href=""><li> Nommination des Cenceurs EST</li></a>
+			<a href=""><li> Nommination des Surveillants généraux ESG</li></a>
+			<a href=""><li> Nommination des Surveillants généraux EST</li></a>
+			<a href=""><li> Mutations </li></a>
+			<a href=""><li> Actualités de la DRES Adamaoua</li></a>
+			<a href=""><li> Actualités de la Craie Solidaire Vina </li></a>
+		</ul>
+		</td>
+		<td size="80%" align="right">
+					<center><h4> Nombre de membres </h4></center>
+					<h3> <center><B>{{total_utilisateur}}</B></center></h3>
+				
+					<center><h4> Membres en ligne </h4></center>
+					<h3><center><B>{{total_versement}}</B></center></h3>
+				
+
+	
+</td>
+</tr>
+</table>
+ -->
+
+
+{% endblock %}

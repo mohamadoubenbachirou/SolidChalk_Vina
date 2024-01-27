@@ -1,0 +1,44 @@
+      body{
+        background-color: #ffffff;
+        font-family: "Verdana";
+        background-image: url('{% static "back.jpg" %}');
+        background-size: cover;
+        background-repeat: no;
+      }
+
+      .div-util, .div-vers, .div-etat, .div-post{
+        background-color: #06af5b;
+        height: 150px;
+      }
+      .transparent-image{
+        opacity: 0.7;
+      }
+      h3{
+        padding: 10px;
+      }
+      h4{
+        padding: 10px;
+      }
+  
+  
+      #total-orders{
+        background-color: #4cb4c7;
+      }
+  
+  
+      #orders-delivered{
+        background-color: #7abecc;
+      }
+  
+      #orders-pending{
+        background-color: #7CD1C0;
+      }
+     
+
+   
+
+      
+  
+  
+  
+  

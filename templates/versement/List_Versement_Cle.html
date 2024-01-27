@@ -1,0 +1,34 @@
+{% extends 'main.html'%}
+        
+{% block content %}
+
+<br>
+
+<div class="row">
+	<div class="col-md-3">
+		<div class="card card-body">
+			<h3>Versement:</h3>
+			<hr>
+			<a class="btn btn-outline-info  btn-sm btn-block" href="{% url 'modifier_versement' id %}">Modifier Versement</a>
+			<a class="btn btn-outline-danger  btn-sm btn-block" href="{%url 'supprimer_versement' id %}">Supprimer le Versement</a>
+
+		</div>
+	</div>
+
+	<div class="col-md-7">
+        <div class="card card-body">
+            <h3><B> Informations de versement </B></h3>
+            <hr>
+			<p> <B> Nom: </B> {{versement.utilisateur}} </p>
+            <p> <B> Mantant: </B> {{versement.montant}} </p>
+            <p> <B> Date: </B> {{versement.date}} </p>
+        </div>
+    </div>
+
+
+
+
+
+
+
+{% endblock %}

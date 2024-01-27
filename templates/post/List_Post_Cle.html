@@ -1,0 +1,28 @@
+{% extends 'main.html'%}
+        
+{% block content %}
+
+<br>
+<div class="row">
+	<div class="col-md-3">
+		<div class="card card-body">
+			<h3>Post:</h3>
+			<hr>
+			<a class="btn btn-outline-info  btn-sm btn-block" href="{% url 'modifier_post' id %}">Modifier Post</a>
+			<a class="btn btn-outline-danger  btn-sm btn-block" href="{% url 'supprimer_post' id %}">Supprimer le Post </a>
+
+		</div>
+	</div>
+
+	<div class="col-md-7">
+        <div class="card card-body">
+            <h3><B> Informations du post </B></h3>
+            <hr>
+			<p> <B> Nom: </B> {{post.utilisateur}} </p>
+            <p> <B> Objet: </B> {{post.objet}} </p>
+            <p> <B> Date: </B> {{post.date}} </p>
+        </div>
+    </div>
+
+
+{% endblock %}

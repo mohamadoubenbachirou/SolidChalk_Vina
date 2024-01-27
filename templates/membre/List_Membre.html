@@ -1,0 +1,84 @@
+        {% extends 'main.html'%}
+        
+        {% block content %}
+		<br>
+		<div class="row">
+			
+		
+			<div class="col-md-8">
+				<div class="card card-body">
+					<h4><B>Informations</B></h4>
+					<hr>
+					<!-- <p> <B> Adamaoua: </B> {{region}} </p>
+					<p> <B> Centre: </B> {{utilisateur.telephone}} </p>
+					<p> <B> Est: </B> {{utilisateur.etablissement}} </p>
+					<p> <B> Extreme-Nord: </B> {{region}} </p>
+					<p> <B> Littoral: </B> {{utilisateur.telephone}} </p>
+					<p> <B> Nord: </B> {{utilisateur.etablissement}} </p>
+					<p> <B> Nord-Ouest: </B> {{utilisateur.etablissement}} </p>
+					<p> <B> Ouest: </B> {{utilisateur.telephone}} </p>
+					<p> <B> Sud: </B> {{region}} </p>
+					<p> <B> Sud-Ouset: </B> {{utilisateur.telephone}} </p> -->
+				</div>
+			</div>
+		
+			<div class="col-md">
+				<div class="div-util">
+					<center><h3 style="color: white;"><B>Total des membres</B></h3></center>
+					<hr>
+					<h3 style="text-align: center;padding: 10px; color: white;">{{total_membre}}</h3>
+				</div>
+			</div>
+		</div>
+		
+		
+		<br>
+		<h3><B>Liste des membres</h3></B>
+<div class="row">
+	<div class="col">
+		<div class="card card-body">
+			<form method="get" style="display: flex; justifiy-content: space-between;">
+			{{myFilter.form}}
+			<button class="btn btn-primary  mx-sm-3" type="submit">Filtrer</button>
+		</form>
+		</div>
+	</div>
+
+</div>
+		
+		<div class="row">
+			<div class="col-md">
+				<div class="card card-body">
+					<table class="table table-sm">
+						<tr>
+							<th>Nom</th>
+							<th>Matricule</th>
+							<th>Region</th>
+							<th>Département</th>
+							<th>Etablissement</th>
+							<th>Discipline</th>
+							<th>Téléphone</th>
+							<th>Ajour</th>
+							<th>Actif</th>
+						</tr>
+						{% for membre in membre %}
+						<tr>
+						   <td>{{membre.nom}}</td>
+						   <td>{{membre.matricule}}</td>
+						   <td>{{membre.region}}</td>
+						   <td>{{membre.departement}}</td>
+						   <td>{{membre.etablissement}}</td>
+						   <td>{{membre.discipline}}</td>
+						   <td>{{membre.telephone}}</td>
+					       <td>{{membre.ajour}}</td>
+						   <td>{{membre.actif}}</td>
+						</tr>
+						{% endfor %}
+		
+					</table>
+				</div>
+			</div>
+		</div>
+		
+        {% endblock %}
+    

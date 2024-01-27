@@ -1,0 +1,75 @@
+{% extends 'main.html'%}
+        
+{% block content %}
+
+<br>
+
+<div class="row">
+	
+
+	<div class="col-md-8">
+		<div class="card card-body">
+			<h4><B>Informations</B></h4>
+					<hr>
+					<!-- <p> <B> Adamaoua: </B> {{region}} </p>
+					<p> <B> Centre: </B> {{utilisateur.telephone}} </p>
+					<p> <B> Est: </B> {{utilisateur.etablissement}} </p>
+					<p> <B> Extreme-Nord: </B> {{region}} </p>
+					<p> <B> Littoral: </B> {{utilisateur.telephone}} </p>
+					<p> <B> Nord: </B> {{utilisateur.etablissement}} </p>
+					<p> <B> Nord-Ouest: </B> {{utilisateur.etablissement}} </p>
+					<p> <B> Ouest: </B> {{utilisateur.telephone}} </p>
+					<p> <B> Sud: </B> {{region}} </p>
+					<p> <B> Sud-Ouset: </B> {{utilisateur.telephone}} </p> -->
+		</div>
+	</div>
+
+	<div class="col-md">
+		<div class="div-post">
+			<center><h3 style="color: white;"><B>Total des Postes</B></h3></center>
+			<hr>
+			<h3 style="text-align: center;padding: 10px; color: white;">{{total_post}}</h3>
+		</div>
+	</div>
+</div>
+
+<br>
+                        <h3><B>Liste des postes</B></h3>
+
+						<div class="row">
+							<div class="col">
+								<div class="card card-body">
+									<form method="get" style="display: flex; justifiy-content: space-between;">
+									{{myFilter.form}}
+									<button class="btn btn-primary  mx-sm-3" type="submit">Filtrer</button>
+								</form>
+								</div>
+							</div>
+						</div>
+
+							<div class="row">
+								<div class="col-md">
+									<div class="card card-body">
+                                <table class="table table-sm">
+                                        <tr>
+                                                <th>Membre</th>
+                                                <th>Objet</th>
+                                                <th>Texte</th>
+                                                <th>Date</th>
+                                        </tr>
+                                        {% for post in post %}
+				        <tr>
+                                                <td>{{post.membre}}</td>
+                                                <td>{{post.objet}}</td>
+                                                <td>{{post.texte}}</td>
+                                                <td>{{post.date}}</td>
+			   </tr>
+				{% endfor %}
+                                </table>
+                        </div>
+                </div>
+        
+        </div>
+
+
+{% endblock %}

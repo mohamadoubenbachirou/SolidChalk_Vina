@@ -1,0 +1,29 @@
+{% extends 'main.html'%}
+        
+{% block content %}
+
+<br>
+<div class="row">
+	<div class="col-md-3">
+		<div class="card card-body">
+			<h3>Etat:</h3>
+			<hr>
+			<a class="btn btn-outline-info  btn-sm btn-block" href="{% url 'modifier_etat' id %}">Modifier Etat</a>
+			<a class="btn btn-outline-danger  btn-sm btn-block" href="{% url 'supprimer_etat' id  %}">Supprimer l'état</a>
+
+		</div>
+	</div>
+
+	<div class="col-md-7">
+        <div class="card card-body">
+            <h3><B> Informations de l'état de versement </B></h3>
+            <hr>
+			<p> <B> Nom: </B> {{etat.utilisateur}} </p>
+            <p> <B> Cumule Attendu: </B> {{etat.cumAtt}} </p>
+            <p> <B> Cumeule Versé: </B> {{etat.cumVers}} </p>
+            <p> <B> Ecart: </B> {{etat.ecart}} </p>
+        </div>
+    </div>
+
+
+{% endblock %}

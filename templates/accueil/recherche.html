@@ -1,0 +1,15 @@
+
+        
+{% block content %}
+<center>
+   {% if recherche %}
+   <h3> Votre recherche pour {{recherche}}</h3>
+   <br/>
+   {% for membre in membres %}
+        {{ membre.nom}} - {{ membre.matricule}} - {{ membre.region}} - {{ membre.departement}} - {{ membre.etablissement}} - {{ membre.discipline}} - {{ membre.telephone}} - {{ membre.ajour}} - {{ membre.actif}}
+   {% endfor %} 
+   {% else %}
+   <h3> Hey! Vous avez oublié les termes.</h3>
+   {% endif %}
+</center>
+{% endblock %}

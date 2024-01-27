@@ -1,0 +1,50 @@
+{% extends 'main.html'%}
+        
+{% block content %}
+<div class="row">
+    <div class="col-md-8">
+        {{erreur}}
+    </div>
+   
+</div>
+<div class="row">
+    <div class=" col-md-12">
+<ul class="trs">
+    <li class="gsr">
+        {% for docs in tab %}
+        {{ docs }}
+        {% endfor %}
+    </li>
+</ul>
+        <div class="row">
+        <div class="col-md-4">
+
+        </div>
+        <div class="pagination col-md-6">
+            <span class="set-links">
+                {% if tab.has_previous %}
+                <a href="?page=1">&laquo; premier</a>
+                <a href="?page={{tab.previous_page_number}}">
+                    precedent
+                </a>
+                {% endif %}
+                <span class="current">
+                    page
+             {{ tab.number}} de {{tab.paginator.num_pages}}.
+                </span>
+                {% if tab.has_next %}
+                <a href="?page={{ tab.next_page_number }}">suivant</a>
+                <a href="?page={{ tab.paginator.num_pages}}">derniere &raquo;</a>
+                {% endif %}
+            </span>
+        </div>
+    </div>
+<div class="col-md-4">
+    {{doc}}
+</div>
+    </div>
+    
+</div>
+
+
+{% endblock %}

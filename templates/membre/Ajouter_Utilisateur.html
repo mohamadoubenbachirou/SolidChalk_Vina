@@ -1,0 +1,39 @@
+{% extends 'main.html'%}
+        
+        {% block content %}
+        
+        <center>
+            {% for message in messages %}
+            <h3><p id="messages">{{message}}</p></h3>
+            {% endfor %}
+        <form method="post" enctype="multipart/form-data">
+            {{ form.as_p }}
+            {% csrf_token %}
+            <button type="submit"> Enregistrer</button>
+        </form>
+        </center>
+
+        <!--<h1 style="color: green;"> {{message}} </h1>
+        <center> 
+            <form action="{% url 'ajouter_utilisateur'%}" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type="text" name="matricule" placeholder="Entrer matricule">
+                <br><br>
+                <input type="text" name="nom" placeholder="Entrer nom ">
+                <br><br>
+                <input type="text" name="region" placeholder="Entrer region">
+                <br><br>
+                <input type="text" name="departement" placeholder="Entrer departement">
+                <br><br>
+                <input type="text" name="etablissement" placeholder="Entrer etablissement">
+                <br><br>
+                <input type="text" name="discipline" placeholder="Entrer discipline">
+                <br><br>
+                <input type="number" name="numero" placeholder="Entrer numero">
+            </form>
+            <br>
+                <button type="submit">Enregistrer</button>
+        </center>-->
+
+        {% endblock %}
+

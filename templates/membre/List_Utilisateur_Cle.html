@@ -1,0 +1,35 @@
+{% extends 'main.html'%}
+        
+{% block content %}
+
+<br>
+<div class="row">
+    <div class="col-md-3">
+        <div class="card card-body">
+            <h3>Utilisateur:</h3>
+            <hr>
+            <a class="btn btn-outline-info  btn-sm btn-block" href="{% url 'modifier_utilisateur' id %}">Modifier Utilisateur</a>
+            <a class="btn btn-outline-danger  btn-sm btn-block" href="{% url 'supprimer_utilisateur' id %}">Supprimer l'utilisateur</a>
+
+        </div>
+    </div>
+
+    <div class="col-md-7">
+        <div class="card card-body">
+            <h3><B> Informations de l'utilisateur </B></h3>
+            <hr>
+            <p> <B> Nom: </B> {{utilisateur.nom}} </p>
+            <p> <B> Téléphone: </B> {{utilisateur.telephone}} </p>
+            <p> <B> Region: </B> {{utilisateur.region}} </p>
+            <p> <B> Département: </B> {{utilisateur.departement}} </p>
+            <p> <B> Etablissement: </B> {{utilisateur.etablissement}} </p>
+            <p> <B> Discipline: </B> {{utilisateur.discipline}} </p>
+            <p> <B> Actif: </B> {{utilisateur.actif}} </p>
+            <p> <B> Ajour: </B> {{utilisateur.ajour}} </p>
+        </div>
+    </div>
+
+
+
+{% endblock %}
+

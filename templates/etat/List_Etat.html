@@ -1,0 +1,75 @@
+{% extends 'main.html'%}
+        
+{% block content %}
+
+<br>
+
+<div class="row">
+
+	<div class="col-md-8">
+		<div class="card card-body">
+			<h4><B>Informations</B></h4>
+					<hr>
+					<!-- <p> <B> Adamaoua: </B> {{region}} </p>
+					<p> <B> Centre: </B> {{utilisateur.telephone}} </p>
+					<p> <B> Est: </B> {{utilisateur.etablissement}} </p>
+					<p> <B> Extreme-Nord: </B> {{region}} </p>
+					<p> <B> Littoral: </B> {{utilisateur.telephone}} </p>
+					<p> <B> Nord: </B> {{utilisateur.etablissement}} </p>
+					<p> <B> Nord-Ouest: </B> {{utilisateur.etablissement}} </p>
+					<p> <B> Ouest: </B> {{utilisateur.telephone}} </p>
+					<p> <B> Sud: </B> {{region}} </p>
+					<p> <B> Sud-Ouset: </B> {{utilisateur.telephone}} </p> -->
+		</div>
+	</div>
+
+	<div class="col-md">
+		<div class="div-etat">
+			<center><h3 style="color: white;"><B>Total des états</B></h3></center>
+			<hr>
+			<h3 style="text-align: center;padding: 10px; color: white;">{{total_etat}}</h3>
+		</div>
+	</div>
+</div>
+
+
+<br>
+
+                   <h3><B>Liste des états</B></h3>
+                                
+				   <div class="row">
+					<div class="col">
+						<div class="card card-body">
+							<form method="get" style="display: flex; justifiy-content: space-between;">
+							{{myFilter.form}}
+							<button class="btn btn-primary  mx-sm-3" type="submit">Filtrer</button>
+						</form>
+						</div>
+					</div>
+				   </div>
+					<div class="row">
+						<div class="col-md">
+							<div class="card card-body">
+                                <table class="table table-sm">
+                                        <tr>
+                                                <th>Membre</th>
+                                                <th>Cumule attendu</th>
+                                                <th>Cumule versé</th>
+                                                <th>Ecart</th>
+                                        </tr>
+                                        {% for etat in etat %}
+				                          <tr>
+				                              <td>{{etat.membre}}</td>
+				                              <td>{{etat.cumAtt}}</td>
+				                              <td>{{etat.cumVers}}</td>
+				                              <td>{{etat.ecart}}</td>
+			                              </tr>
+				                       {% endfor %}
+                                </table>
+                        </div>
+                </div>
+        
+        </div>
+
+
+{% endblock %}

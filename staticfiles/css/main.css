@@ -7,11 +7,11 @@
       }
 
       .div-util, .div-vers, .div-etat, .div-post{
-        background-color: #06af5b;
-        height: 150px;
+        background-color: #0bb15e;
+        height: 160px;
       }
       .transparent-image{
-        opacity: 0.7;
+        opacity: 0.9;
       }
       h3{
         padding: 10px;
@@ -34,7 +34,6 @@
         background-color: #7CD1C0;
       }
      
-
    
 
       

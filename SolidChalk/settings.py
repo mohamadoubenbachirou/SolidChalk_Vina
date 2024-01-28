@@ -25,11 +25,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = config('SECRET_KEY')
+DATABASE_URL = config('DATABASE_URL')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['https://solid-rmb5.onrender.com/', '127.0.0.1']
 
 
 # Application definition
@@ -98,7 +99,7 @@ WSGI_APPLICATION = 'SolidChalk.wsgi.application'
 # }
 
 DATABASES = {
-    'default': dj_database_url.config()
+    'default': dj_database_url.config(default=config('DATABASE_URL'))
 }
 
 

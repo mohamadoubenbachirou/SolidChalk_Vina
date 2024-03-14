@@ -29,7 +29,7 @@ DATABASE_URL = config('DATABASE_URL')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://solid-rmb5.onrender.com/', '127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition

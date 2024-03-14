@@ -1,6 +1,15 @@
  {% load static %}
  {% load i18n %}
 
+ <style>
+  /* Afficher tous les éléments de menu sur les téléphones */
+  @media screen and (max-width: 767px) {
+    .navbar-nav .nav-item {
+      display: block !important; /* Afficher tous les éléments de menu en tant que blocs */
+    }
+  }
+</style>
+
  <!-- Navbar-->
 {% get_available_languages as LANGUAGES %}
 {% get_language_info_list for LANGUAGES as languages %}

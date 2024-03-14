@@ -1,0 +1,26 @@
+{% extends 'main.html'%}
+{% load i18n %}    
+{% block content %}
+
+<br>
+<h1>Posts en attente de validation</h1>
+<ul>
+    {% for post in posts_en_attente %}
+    <li>
+        <b>Membre</b>
+        {{post.membre}} <br>
+        <b>Objet</b>
+        {{post.objet}} <br>
+        <b>Date</b>
+        {{post.date}} <br>
+        <form action="{% url 'valider_post' post_id %}" method="post">
+        {% csrf_token %}
+        <button type="submit">Valider</button>
+        </form>
+    </li>
+    {% empty %}
+    <li>Aucun post en attente</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

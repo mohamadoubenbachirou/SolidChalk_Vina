@@ -8,7 +8,7 @@
 <form action="" method="POST"...>
     {% csrf_token %}
     {{form}}
-    <center><input type="submit" name="Envoyer"></center>
+    <center><input type="submit" name="{% trans 'Envoyer' %}"></center>
 
 </form>
    </div>

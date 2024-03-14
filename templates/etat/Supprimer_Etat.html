@@ -1,19 +1,23 @@
 {% extends 'main.html'%}
         
 {% block content %}
-
-<div class="row">
-    <div class="col-md-6">
-      <div class="card card-body">
-<p> Voulez-vous supprimer cet état ? </p>
-<form action="{% url 'supprimer_etat' item.id %}" method="post">
-    {% csrf_token %}
-    <a class="btn btn-warning" href="{% url 'accueil'%}">Annuler</a>
-    <input class="btn btn-danger" type="submit" name="Confirmer">
-
-</form>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="text-center mb-4">{% trans 'Confirmation de suppression' %}</h3>
+                    <p class="text-center">{% trans 'Êtes-vous sûr de vouloir supprimer cet état ? Cette action est irréversible.'%}</p>
+                    <div class="d-flex justify-content-center mt-4">
+                        <form action="{% url 'supprimer_etat' item.id %}" method="post">
+                            {% csrf_token %}
+                            <button class="btn btn-danger mr-3" type="submit">{% trans 'Confirmer' %}</button>
+                            <a class="btn btn-secondary" href="{% url 'accueil' %}">{% trans 'Annuler' %}</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-</div>
-</div>
-
 {% endblock %}

@@ -5,9 +5,9 @@ from django import forms
 class EtatForm(ModelForm):
     class Meta:
         model=Etat
-        fields=['cumAtt' ,'cumVers', 'ecart']
+        fields=['membre','cumAtt' ,'cumVers', 'ecart', 'sortie']
 
 class EtatVersementForm(forms.ModelForm):
     class Meta:
          model = Etat
-         fields=['membre', 'cumAtt' ,'cumVers', 'ecart']
+         fields=['membre', 'cumAtt', 'sortie'] 

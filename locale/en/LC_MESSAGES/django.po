@@ -1,0 +1,466 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-13 13:58+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\SolidChalk\settings.py:138
+msgid "Anglais"
+msgstr "English"
+
+#: .\SolidChalk\settings.py:139
+msgid "Français"
+msgstr "French"
+
+#: .\compte\forms.py:33 .\membre\models.py:15
+msgid "Adamaoua"
+msgstr "Adamawa"
+
+#: .\compte\forms.py:33 .\membre\models.py:15
+msgid "Centre"
+msgstr "Center"
+
+#: .\compte\forms.py:33 .\membre\models.py:15
+msgid "Est"
+msgstr "East"
+
+#: .\compte\forms.py:33 .\membre\models.py:15
+msgid "Extreme-Nord"
+msgstr "Far-North"
+
+#: .\compte\forms.py:33 .\membre\models.py:15
+msgid "Littoral"
+msgstr "Littoral"
+
+#: .\compte\forms.py:33 .\membre\models.py:15
+msgid "Nord"
+msgstr "North"
+
+#: .\compte\forms.py:33 .\membre\models.py:15
+msgid "Nord-Ouest"
+msgstr "North-West"
+
+#: .\compte\forms.py:33 .\membre\models.py:15
+msgid "Ouest"
+msgstr "West"
+
+#: .\compte\forms.py:33 .\membre\models.py:15
+msgid "Sud"
+msgstr "South"
+
+#: .\compte\forms.py:33 .\membre\models.py:15
+msgid "Sud-Ouest"
+msgstr "South"
+
+#: .\templates\accueil\accueil.html:9
+msgid "Actualités"
+msgstr "News"
+
+#: .\templates\accueil\accueil.html:13
+msgid "Redeploiement de certains personnels 05_mars_2024"
+msgstr "Redeployment of certain personnel"
+
+#: .\templates\accueil\accueil.html:14
+msgid ""
+"Message du Chef de l’Etat à l’occasion de la 58ème Édition de la Fête de la "
+"Jeunesse - 10-02-2024"
+msgstr ""
+"Message from the Head of State on the occasion of the 58th Edition of the "
+"Youth Festival"
+
+#: .\templates\accueil\accueil.html:15
+msgid "Discours de fin d'année du Président de la république"
+msgstr "End of year speech of the president of the republic"
+
+#: .\templates\accueil\accueil.html:16
+msgid "Nomination des IPR"
+msgstr "RPI appointment"
+
+#: .\templates\accueil\accueil.html:17
+msgid "Nomination des Proviseurs ESG"
+msgstr "GHS's principal's appointment"
+
+#: .\templates\accueil\accueil.html:18
+msgid "Nomination des Censeurs ESG"
+msgstr "GHS's Vice Principal appointment"
+
+#: .\templates\accueil\accueil.html:19
+#, fuzzy
+#| msgid "Nomination des Proviseurs ESG"
+msgid "Nomination des Proviseurs EST"
+msgstr "GHS's principal's appointment"
+
+#: .\templates\accueil\accueil.html:20
+msgid "Nomination des Cenceurs EST"
+msgstr "GTHS's Vice Principal appointment"
+
+#: .\templates\accueil\accueil.html:21
+msgid "Nomination des Surveillants généraux ESG"
+msgstr "GHS's Discipline Master appointment"
+
+#: .\templates\accueil\accueil.html:22
+msgid "Mutations"
+msgstr "Mutations"
+
+#: .\templates\accueil\accueil.html:23
+msgid "Actualités de la DRES Adamaoua"
+msgstr "Adamawa SRDE news"
+
+#: .\templates\accueil\accueil.html:24
+msgid "Actualités de la Craie Solidaire Vina"
+msgstr "Vina's SolidChalk news"
+
+#: .\templates\accueil\accueil.html:32
+msgid "Statistiques"
+msgstr "Statistics"
+
+#: .\templates\accueil\accueil.html:33
+msgid "Nombre de membres"
+msgstr "Registered Members"
+
+#: .\templates\accueil\accueil.html:34
+msgid "Membres en ligne"
+msgstr "Online Members"
+
+#: .\templates\accueil\recherche.html:26
+msgid "Votre recherche pour"
+msgstr "Your research for"
+
+#: .\templates\base\Navbar.html:19
+msgid "Etat du point focal"
+msgstr "Focal point contributions"
+
+#: .\templates\base\Navbar.html:24
+msgid "Accueil"
+msgstr "Home"
+
+#: .\templates\base\Navbar.html:27 .\templates\etat\List_Etat.html:93
+#: .\templates\post\List_Post.html:97
+msgid "Membres"
+msgstr "Members"
+
+#: .\templates\base\Navbar.html:30
+msgid "Etats"
+msgstr "Contributions"
+
+#: .\templates\base\Navbar.html:33
+msgid "Posts"
+msgstr "Posts"
+
+#: .\templates\base\Navbar.html:36
+#: .\templates\versement\List_Versement.html:91
+msgid "Mes versements"
+msgstr "My deposite"
+
+#: .\templates\base\Navbar.html:39
+msgid "Mon profil"
+msgstr "My profile"
+
+#: .\templates\base\Navbar.html:47
+msgid "Bienvenue"
+msgstr "Welcome"
+
+#: .\templates\base\Navbar.html:54
+msgid "Langues"
+msgstr "Languages"
+
+#: .\templates\base\Navbar.html:64
+msgid "Déconnexion"
+msgstr "Disconnect"
+
+#: .\templates\base\Navbar.html:68
+msgid "Recherche"
+msgstr "Search"
+
+#: .\templates\compte\acces.html:90
+msgid "SE CONNECTER"
+msgstr "LOGIN"
+
+#: .\templates\compte\acces.html:94
+msgid "Nom..."
+msgstr "Name"
+
+#: .\templates\compte\acces.html:97
+msgid "Mot de passe..."
+msgstr "Password"
+
+#: .\templates\compte\acces.html:101
+msgid "Accès"
+msgstr "Access"
+
+#: .\templates\compte\inscription.html:49
+#: .\templates\membre\List_Membre.html:77
+msgid "Inscrire un membre"
+msgstr "Register a member"
+
+#: .\templates\compte\inscription.html:53
+msgid "Inscrire"
+msgstr "Register"
+
+#: .\templates\etat\Ajouter_Etat.html:50 .\templates\post\Ajouter_Post.html:50
+#: .\templates\versement\Ajouter_Versement.html:11
+msgid "Envoyer"
+msgstr "Send"
+
+#: .\templates\etat\List_Etat.html:67
+msgid "Total des états"
+msgstr "Total Contributions"
+
+#: .\templates\etat\List_Etat.html:76
+msgid "Liste des états"
+msgstr "Contributions list"
+
+#: .\templates\etat\List_Etat.html:94
+msgid "Cumule attendu"
+msgstr "Inspected amount"
+
+#: .\templates\etat\List_Etat.html:95
+msgid "Motif"
+msgstr "Pattern"
+
+#: .\templates\etat\List_Etat.html:96
+msgid "Cumule versé"
+msgstr "Given amount paid"
+
+#: .\templates\etat\List_Etat.html:97
+msgid "Ecart"
+msgstr "Gap"
+
+#: .\templates\etat\List_Etat.html:98
+msgid "sortie"
+msgstr "Output"
+
+#: .\templates\etat\List_Etat.html:101 .\templates\post\List_Post.html:103
+msgid "Mise à Jour"
+msgstr "Update"
+
+#: .\templates\etat\List_Etat.html:102 .\templates\etat\List_Etat.html:117
+#: .\templates\membre\List_Membre.html:115
+#: .\templates\membre\List_Membre.html:147 .\templates\post\List_Post.html:104
+#: .\templates\post\List_Post.html:117
+msgid "Supprimer"
+msgstr "Delete"
+
+#: .\templates\etat\List_Etat.html:116 .\templates\membre\List_Membre.html:146
+#: .\templates\post\List_Post.html:116
+msgid "Modifier"
+msgstr "To modify"
+
+#: .\templates\etat\Supprimer_Etat.html:9
+msgid "Confirmation de suppression"
+msgstr "Deletion confirmation"
+
+#: .\templates\etat\Supprimer_Etat.html:10
+msgid "Êtes-vous sûr de vouloir supprimer cet état ? Cette action est irréversible."
+msgstr "Are you sure you want to delete this state? this action is irreversible."
+
+#: .\templates\etat\Supprimer_Etat.html:14
+#: .\templates\membre\Supprimer_Membre.html:60
+#: .\templates\post\Supprimer_Post.html:58
+#: .\templates\versement\Supprimer_Versement.html:12
+msgid "Confirmer"
+msgstr "Confirm"
+
+#: .\templates\etat\Supprimer_Etat.html:15
+#: .\templates\membre\Supprimer_Membre.html:59
+#: .\templates\post\Supprimer_Post.html:57
+#: .\templates\versement\Supprimer_Versement.html:11
+msgid "Annuler"
+msgstr "Cancel"
+
+#: .\templates\membre\Ajouter_Membre.html:58
+#: .\templates\profil\change_user_and_password.html:60
+#: .\templates\versement\Faire_Versement.html:60
+msgid "Enregistrer"
+msgstr "Save"
+
+#: .\templates\membre\List_Membre.html:67
+msgid "Total des membres"
+msgstr "Registered Members"
+
+#: .\templates\membre\List_Membre.html:83
+msgid "Liste des membres"
+msgstr "Registered Members"
+
+#: .\templates\membre\List_Membre.html:89 .\templates\post\List_Post.html:86
+msgid "Filtrer"
+msgstr "Filtered"
+
+#: .\templates\membre\List_Membre.html:101
+msgid "Membre"
+msgstr "Members"
+
+#: .\templates\membre\List_Membre.html:102
+msgid "Matricule"
+msgstr "Matricule"
+
+#: .\templates\membre\List_Membre.html:103
+msgid "Region"
+msgstr "Region"
+
+#: .\templates\membre\List_Membre.html:104
+msgid "Département"
+msgstr "Department"
+
+#: .\templates\membre\List_Membre.html:105
+msgid "Etablissement"
+msgstr "School"
+
+#: .\templates\membre\List_Membre.html:106
+msgid "Discipline"
+msgstr "Subject"
+
+#: .\templates\membre\List_Membre.html:107
+msgid "Téléphone"
+msgstr "Phone"
+
+#: .\templates\membre\List_Membre.html:108
+msgid "Date de prise de service"
+msgstr "Date of service"
+
+#: .\templates\membre\List_Membre.html:109
+msgid "Date d'inscription"
+msgstr "Registration date"
+
+#: .\templates\membre\List_Membre.html:110
+msgid "A jour"
+msgstr "State"
+
+#: .\templates\membre\List_Membre.html:111
+#: .\templates\membre\List_Membre.html:143
+msgid "Actif"
+msgstr "Assets"
+
+#: .\templates\membre\List_Membre.html:114
+msgid "Mise à jour"
+msgstr "Update"
+
+#: .\templates\membre\List_Membre.html:143
+msgid "Pas actif"
+msgstr "Not Assets"
+
+#: .\templates\membre\Supprimer_Membre.html:56
+msgid "Voulez-vous supprimer ce membre ?"
+msgstr "Do you want to delete this member ?"
+
+#: .\templates\membre\creer_point_focal.html:28
+msgid "Cummule des versements"
+msgstr "Total payments"
+
+#: .\templates\membre\creer_point_focal.html:37
+msgid "Versement du point focal"
+msgstr "Focal point payment"
+
+#: .\templates\membre\creer_point_focal.html:42
+msgid "Etablissement:"
+msgstr "School"
+
+#: .\templates\membre\creer_point_focal.html:52
+msgid "Noms des membres"
+msgstr "Members' names"
+
+#: .\templates\membre\creer_point_focal.html:53
+#: .\templates\versement\List_Versement.html:97
+msgid "Montant"
+msgstr "Amount"
+
+#: .\templates\membre\creer_point_focal.html:54
+#: .\templates\post\List_Post.html:100
+#: .\templates\versement\List_Versement.html:98
+msgid "Date"
+msgstr "Date"
+
+#: .\templates\post\Creer_Post.html:6
+msgid "Créer un nouveau post"
+msgstr "Create a new post"
+
+#: .\templates\post\Creer_Post.html:10 .\templates\post\List_Post.html:75
+#: .\templates\post\Poster.html:12
+msgid "Poster"
+msgstr "Posts"
+
+#: .\templates\post\List_Post.html:67
+msgid "Total des Posts"
+msgstr "Total of the posts"
+
+#: .\templates\post\List_Post.html:79
+msgid "Posts validés "
+msgstr "Valided posts"
+
+#: .\templates\post\List_Post.html:98
+msgid "Objet"
+msgstr "Topic"
+
+#: .\templates\post\List_Post.html:99
+msgid "Texte"
+msgstr "Text"
+
+#: .\templates\post\Supprimer_Post.html:54
+msgid "Voulez-vous supprimer ce poste ?"
+msgstr "Do you want to delete this post ?"
+
+#: .\templates\profil\change_user_and_password.html:54
+msgid "Modifier le nom d'utilisateur"
+msgstr "Change user name"
+
+#: .\templates\profil\change_user_and_password.html:57
+msgid "Modifier le mot de passe"
+msgstr "Change the password"
+
+#: .\templates\versement\Faire_Versement.html:51
+msgid "versement"
+msgstr "My deposite"
+
+#: .\templates\versement\List_Versement.html:46
+msgid "Montant attendu:"
+msgstr "Expected amount"
+
+#: .\templates\versement\List_Versement.html:48
+msgid "Montant versé:"
+msgstr "Amount paid"
+
+#: .\templates\versement\List_Versement.html:66
+msgid "Total des versements"
+msgstr "Total payments"
+
+#: .\templates\versement\List_Versement.html:73
+msgid "Somme totale versée"
+msgstr "Total amount paid"
+
+#: .\templates\versement\List_Versement.html:84
+msgid "Effectuer un versement"
+msgstr "Make a deposite"
+
+#: .\templates\versement\List_Versement.html:86
+msgid "Répartir Montant"
+msgstr "Leave amount"
+
+#: .\templates\versement\Supprimer_Versement.html:8
+msgid "Voulez-vous supprimer ce versement ?"
+msgstr "Do you want to delete this payment ?"
+
+#~ msgid "Nomination des Surveillants généraux EST"
+#~ msgstr "GTHS's Discipline Master appointment"
+
+#~ msgid "Liste des posts"
+#~ msgstr "List of the post"
+
+#~ msgid "Nom"
+#~ msgstr "Name"
+
+#~ msgid "English"
+#~ msgstr "Anglais"

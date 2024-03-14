@@ -16,11 +16,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-from django.contrib.admin.views.decorators import staff_member_required
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.conf.urls.i18n import i18n_patterns
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls)
+]
+
+urlpatterns += i18n_patterns(
     path('accounts/', include('django.contrib.auth.urls')),
     path('', include('accueil.urls')),
     path('versement', include('versement.urls')),
@@ -29,6 +32,8 @@ urlpatterns = [
     path('membre', include('membre.urls')),
     path('compte', include('compte.urls')),
     path('profil', include('profil.urls')),
-]
+    #path('point_focal', include('point_focal.urls')),
+    #path('etablissement/', include('etablissement.urls')),
+)
 
 urlpatterns +=staticfiles_urlpatterns()

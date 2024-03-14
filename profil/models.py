@@ -11,6 +11,3 @@ class UserProfile(models.Model):
     def __str__(self):
         return self.user.username
 
-#@register(UserProfile)  
-#class UserProfileTranslationOptions(TranslationOptions):
-#    fields = ('user', 'last_activity', 'profil_picture',) 

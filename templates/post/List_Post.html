@@ -1,8 +1,46 @@
 {% extends 'main.html'%}
-        
+{% load i18n %}    
 {% block content %}
 
 <br>
+<style>
+.card {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+
+
+.btn:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.table th,
+.table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.table th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+</style>
 
 <div class="row">
 	
@@ -26,22 +64,26 @@
 
 	<div class="col-md">
 		<div class="div-post">
-			<center><h3 style="color: white;"><B>Total des Postes</B></h3></center>
+			<center><h3 style="color: white;"><B>{% trans 'Total des Posts' %}</B></h3></center>
 			<hr>
 			<h3 style="text-align: center;padding: 10px; color: white;">{{total_post}}</h3>
 		</div>
 	</div>
 </div>
 
+<a class="btn btn-primary  btn-sm btn-block" href="{%url 'poster'%}">
+	<button class="btn btn-primary  mx-sm-3" type="submit">{% trans 'Poster' %}</button>
+	</a>
+
 <br>
-                        <h3><B>Liste des postes</B></h3>
+                        <h3><B>{% trans 'Posts validés ' %}</B></h3>
 
 						<div class="row">
 							<div class="col">
 								<div class="card card-body">
 									<form method="get" style="display: flex; justifiy-content: space-between;">
 									{{myFilter.form}}
-									<button class="btn btn-primary  mx-sm-3" type="submit">Filtrer</button>
+									<button class="btn btn-primary  mx-sm-3" type="submit">{% trans 'Filtrer' %}</button>
 								</form>
 								</div>
 							</div>
@@ -52,17 +94,30 @@
 									<div class="card card-body">
                                 <table class="table table-sm">
                                         <tr>
-                                                <th>Membre</th>
-                                                <th>Objet</th>
-                                                <th>Texte</th>
-                                                <th>Date</th>
+                                                <th>{% trans 'Membres' %}</th>
+                                                <th>{% trans 'Objet' %}</th>
+                                                <th>{% trans 'Texte' %}</th>
+                                                <th>{% trans 'Date' %}</th>
+												{% if user.is_authenticated %}
+                                                    {% if user.is_staff or is_point_focal %}
+												<th>{% trans 'Mise à Jour' %}</th>
+					                            <th>{% trans 'Supprimer' %}</th> 
+												    {% endif %}
+												{% endif %}
                                         </tr>
-                                        {% for post in post %}
+                                        {% for post in post|slice:"0:10" %}
 				        <tr>
                                                 <td>{{post.membre}}</td>
                                                 <td>{{post.objet}}</td>
                                                 <td>{{post.texte}}</td>
                                                 <td>{{post.date}}</td>
+												{% if user.is_authenticated %}
+                                                    {% if user.is_staff or is_point_focal %}
+												<th><a class="btn btn-info" href="{% url 'modifier_post' post.id %}">{% trans 'Modifier' %}</a></th>
+					                            <th><a class="btn btn-danger" href="{% url 'supprimer_post' post.id %}">{% trans 'Supprimer' %}</a></th> 
+												    {% endif %}
+												{% endif %}
+				</tr>
 			   </tr>
 				{% endfor %}
                                 </table>

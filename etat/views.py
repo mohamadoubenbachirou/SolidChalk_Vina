@@ -20,49 +20,52 @@ def List_Etat(request):
       'total_etat': total_etat,
       'myFilter':myFilter,
       }
+   if request.user.is_authenticated:
+        is_point_focal = request.user.groups.filter(name='Points focaux').exists()
+        context['is_point_focal'] = is_point_focal
    return render(request, 'etat/List_Etat.html', context)
 
-# @login_required
-# def Ajouter_Etat(request):
-#    form=EtatForm()
-#    if request.method=='POST':
-#       form=EtatForm(request.POST)
-#       if form.is_valid():
-#          form.save()
-#          return redirect('accueil')
-#    context={'form':form}
-#    return render(request, 'etat/Ajouter_Etat.html', context)
+@login_required
+def Ajouter_Etat(request):
+   form=EtatForm()
+   if request.method=='POST':
+      form=EtatForm(request.POST)
+      if form.is_valid():
+         form.save()
+         return redirect('etat')
+   context={'form':form}
+   return render(request, 'etat/Ajouter_Etat.html', context)
 
-# @login_required
-# def Modifier_Etat(request,pk):
-#    etat=Etat.objects.get(id=pk)
-#    form=EtatForm(instance=etat)
+@login_required
+def Modifier_Etat(request,pk):
+   etat=Etat.objects.get(id=pk)
+   form=EtatForm(instance=etat)
 
-#    if request.method=='POST':
-#       form=EtatForm(request.POST, instance=etat)
-#       if form.is_valid():
-#          form.save()
-#          return redirect('accueil')
-#    context={'form':form}
-#    return render(request, 'etat/Ajouter_Etat.html', context)
+   if request.method=='POST':
+      form=EtatForm(request.POST, instance=etat)
+      if form.is_valid():
+         form.save()
+         return redirect('etat')
+   context={'form':form}
+   return render(request, 'etat/Ajouter_Etat.html', context)
 
-# @login_required
-# def Supprimer_Etat(request,pk):
-#    etat=Etat.objects.get(id=pk)
-#    if request.method=='POST':
-#       etat.delete()
-#       return redirect('accueil')
-#    context={'item':etat}
-#    return render(request, 'etat/Supprimer_Etat.html', context)
+@login_required
+def Supprimer_Etat(request,pk):
+   etat=Etat.objects.get(id=pk)
+   if request.method=='POST':
+      etat.delete()
+      return redirect('etat')
+   context={'item':etat}
+   return render(request, 'etat/Supprimer_Etat.html', context)
 
-# @login_required
-# def Definir_Etat(request):
-#    form = EtatVersementForm(request.POST or None)
-#    if form.is_valid():
-#        form.save()
-#        form = EtatVersementForm()
-#        return redirect('accueil')
-#    return render(request, 'etat/Definir_Etat.html', {'form':form})
+@login_required
+def Definir_Etat(request):
+   form = EtatVersementForm(request.POST or None)
+   if form.is_valid():
+       form.save()
+       form = EtatVersementForm()
+       return redirect('etat')
+   return render(request, 'etat/Definir_Etat.html', {'form':form})
 
 
 # @login_required

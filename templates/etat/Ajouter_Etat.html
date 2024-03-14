@@ -1,18 +1,55 @@
 {% extends 'main.html'%}
         
 {% block content %}
-<div class="row">
-    <div class="col-md-8">
-      <div class="card card-body">
+<style>
+    body{
+    background-image: none !important;
+    background-color: #f2f2f2; /* Couleur de fond */
+    font-family: Arial, sans-serif; /* Police de caractères */
+}
 
+form {
+    width: 50%;
+    margin: 50px auto; /* Marge externe */
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"],
+input[type="email"],
+textarea,
+input[type="submit"] {
+    background-color: #007bff; /* Couleur du bouton */
+        color: #fff; /* Couleur du texte du bouton */
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px; /* Coins arrondis */
+        cursor: pointer;
+        transition: background-color 0.3s ease; /* Animation de survol */
+}
+
+input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+  </style>
+<center>
 <form action="" method="POST"...>
     {% csrf_token %}
     {{form}}
-    <center><input type="submit" name="Envoyer"></center>
+    <br>
+    <input type="submit" name="{% trans 'Envoyer' %}">
 
 </form>
-   </div>
-      </div>
-</div>
+</center>
 
 {% endblock %}

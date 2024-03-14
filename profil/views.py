@@ -11,32 +11,6 @@ from .forms import CustomUserChangeForm, CustomPasswordChangeForm
 
 
 # Create your views here.
-# @login_required
-# def Edit_Profile(request):
-#    if request.method == 'POST':
-#       form = CustomUserChangeForm(request.POST, instance=request.user)
-#       if form.is_valid():
-#          form.save()
-#          return redirect('accueil')
-#    else:
-#       form = CustomUserChangeForm(instance=request.user)
-#    context={'form':form}
-#    return render(request, 'profil/Mon_Profil.html', context)
-
-# def change_password(request):
-#    if request.method == 'POST':
-#       form = PasswordChangeForm(request.user, request.POST)
-#       if form.is_valid():
-#          user = form.save()
-#          update_session_auth_hash(request, user)
-#          messages.success(request, 'Votre mot de passe a été modifié avec succes')
-#          return redirect('accueil')
-#       else:
-#          messages.error(request, 'Veuiller corriger les erreurs ci-dessous.')
-#    else:
-#       form = PasswordChangeForm(request.user)
-#    return render(request, 'profil/change_password.html', {'form':form})
-
 @login_required
 def change_user_and_password(request):
    if request.method == 'POST':
@@ -55,15 +29,3 @@ def change_user_and_password(request):
       password_form = CustomPasswordChangeForm(request.user)
    return render(request, 'profil/change_user_and_password.html', {'user_form':user_form, 'password_form':password_form})
 
-
-# class CustomPasswordChangeView(PasswordChangeView):
-#    template_name = 'profil/Mon_Profil.html'
-#    success_url = reverse_lazy('accueil')
-
-# class UserEditView(generic.UpdateView):
-#    form_class = UserChangeForm
-#    template_name = 'profil/Mon_Profil.html'
-#    success_url = reverse_lazy('accueil')
-
-#    def get_object(self):
-#       return self.request.user

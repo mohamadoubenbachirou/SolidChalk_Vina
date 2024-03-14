@@ -1,0 +1,62 @@
+{% extends 'main.html' %}
+{% block content %}
+<style>
+    body {
+        background-color: #f8f9fa; /* Couleur de fond */
+        font-family: Arial, sans-serif; /* Police de caractères */
+        
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    .container {
+        background-color: #fff; /* Couleur du conteneur */
+        border-radius: 10px; /* Coins arrondis */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre douce */
+        padding: 20px;
+        width: 400px;
+        text-align: center;
+    }
+
+    h3 {
+        color: #007bff; /* Couleur du texte */
+        margin-top: 20px;
+    }
+
+    p {
+        font-size: 16px; /* Taille de police */
+    }
+
+    form {
+        margin-top: 20px;
+    }
+
+    button[type="submit"] {
+        background-color: #007bff; /* Couleur du bouton */
+        color: #fff; /* Couleur du texte du bouton */
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px; /* Coins arrondis */
+        cursor: pointer;
+        transition: background-color 0.3s ease; /* Animation de survol */
+    }
+
+    button[type="submit"]:hover {
+        background-color: #0056b3; /* Couleur de fond au survol */
+    }
+</style>
+
+<div class="container">
+    {% for message in messages %}
+    <h3><p id="messages">{{ message }}</p></h3>
+    {% endfor %}
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">{% trans 'Enregistrer' %}</button>
+    </form>
+</div>
+
+{% endblock %}

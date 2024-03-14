@@ -1,18 +1,53 @@
 {% extends 'main.html'%}
         
 {% block content %}
-<div class="row">
-    <div class="col-md-9">
-      <div class="card card-body">
+<style>
+    body {
+        background-color: #f8f9fa; /* Couleur de fond */
+        font-family: Arial, sans-serif; /* Police de caractères */
+    }
 
-<form action="" method="POST"...>
+    form {
+        width: 50%;
+        margin: 50px auto; /* Centrer le formulaire horizontalement */
+        padding: 20px;
+        background-color: #ffffff; /* Couleur de fond du formulaire */
+        border-radius: 10px; /* Coins arrondis */
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    textarea,
+    input[type="submit"] {
+        width: calc(100% - 20px); /* Ajustement de la largeur avec une marge de 10px de chaque côté */
+        padding: 10px; /* Espacement interne */
+        margin: 10px 0; /* Espacement externe */
+        border: 1px solid #ccc; /* Bordure grise */
+        border-radius: 5px; /* Coins arrondis */
+        font-size: 16px; /* Taille de police */
+        box-sizing: border-box; /* Boîte de modèle CSS */
+    }
+
+    input[type="submit"] {
+        background-color: #007bff; /* Couleur de fond */
+        color: #ffffff; /* Couleur du texte */
+        border: none; /* Supprimer la bordure */
+        cursor: pointer; /* Curseur pointeur */
+        transition: background-color 0.3s ease; /* Transition douce pour l'effet hover */
+    }
+
+    input[type="submit"]:hover {
+        background-color: #0056b3; /* Couleur de fond au survol */
+    }
+</style>
+
+<form action="" method="POST">
     {% csrf_token %}
-    {{form}}
-    <center><input type="submit" name="Envoyer"></center>
-
+    <center>
+        {{ form.as_p }}
+        <input type="submit" value="{% trans 'Envoyer' %}">
+    </center>
 </form>
-   </div>
-      </div>
-</div>
-
 {% endblock %}

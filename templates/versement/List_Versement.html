@@ -1,15 +1,53 @@
 {% extends 'main.html'%}
-        
+{% load i18n %}       
 {% block content %}
 
 <br>
+<style>
+    .card {
+        background-color: #f8f9fa;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+    }
 
+    .btn-primary:hover {
+        background-color: #0056b3;
+        border-color: #0056b3;
+    }
+
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    .table th,
+    .table td {
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #dee2e6;
+    }
+
+    .table th {
+        background-color: #f8f9fa;
+        font-weight: bold;
+    }
+
+    .table tbody tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+</style>
 <div class="row">
 
 	<div class="col-md-8">
 		<div class="card card-body">
-			<h4><B>Informations</B></h4>
-					<hr>
+			
+			<h4><B>{% trans 'Montant attendu:' %} {{cumAtt|floatformat}}</B></h4>
+			<br>
+			<h4><B>{% trans 'Montant versé:' %} {{montant_total_versé}}</B></h4>
+					
+					
 					<!-- <p> <B> Adamaoua: </B> {{region}} </p>
 					<p> <B> Centre: </B> {{utilisateur.telephone}} </p>
 					<p> <B> Est: </B> {{utilisateur.etablissement}} </p>
@@ -25,23 +63,39 @@
 
 	<div class="col-md">
 		<div class="div-vers">
-			<center><h3 style= "color: white;"><B>Total des versements</B></h3></center>
+			<center><h4 style= "color: white;"><B>{% trans 'Total des versements' %}</B></h4></center>
 			<hr>
-			<h3 style="text-align: center;padding: 10px; color: white;">{{total_versement}}</h3>
+			<h4 style="text-align: center;padding: 10px; color: white;">{{total_versement}}</h4>
+		</div>
+	</div>
+    <div class="col-md">
+		<div class="div-vers">
+			<center><h4 style= "color: white;"><B>{% trans 'Somme totale versée' %}</B></h4></center>
+			<hr>
+			<h4 style="text-align: center;padding: 10px; color: white;">{{somme_versements}}</h4>
 		</div>
 	</div>
 </div>
+<br>
 
+{% if user.is_authenticated %}
+    {% if user.is_staff or is_point_focal %}
+<a class="btn btn-primary  btn-sm btn-block" href="{% url 'faire_versement' %}">
+		<button class="btn btn-primary  mx-sm-3" type="submit">{% trans 'Effectuer un versement' %}</button>
+</a>
+        <button id="repartir-montant-btn" class="btn btn-success btn-sm btn-block">{% trans 'Répartir Montant' %}</button>
+    {% endif %}
+{% endif %}
 
 <br>
-                        <h3><B>Mes versements</B></h3>
+                        <h3><B>{% trans 'Mes versements' %}</B></h3>
 						<div class="row">
 							<div class="col-md">
 								<div class="card card-body">
                                 <table class="table table-sm">
                                         <tr>
-                                                <th>Montant</th>
-                                                <th>Date</th>
+                                                <th>{% trans 'Montant' %}</th>
+                                                <th>{% trans 'Date' %}</th>
                                         </tr>
                                         {% for versement in user_versement %}
 				                          <tr>
@@ -55,6 +109,42 @@
         
         </div>
 
-
+		<script>
+            document.getElementById("repartir-montant-btn").addEventListener("click", function() {
+                var montant = parseFloat(prompt("Veuillez entrer le montant à répartir :"));
+                if (!isNaN(montant)) {
+                    var motif = prompt("Veuillez entrer le motif de la répartition :");
+                    if (motif !== null) { // Vérifie si l'utilisateur a saisi un motif
+                        if (confirm("Êtes-vous sûr de vouloir répartir le montant de " + montant + " ?")) {
+                            fetch("{% url 'repartir_montant' %}", {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/x-www-form-urlencoded',
+                                    'X-CSRFToken': '{{ csrf_token }}'
+                                },
+                                body: 'montant=' + montant + '&motif=' + encodeURIComponent(motif)
+                            })
+                            .then(response => response.json())
+                            .then(data => {
+                                if (data.success) {
+                                    alert(data.message);
+                                    // Rediriger ou actualiser la page si nécessaire
+                                } else {
+                                    alert("Erreur lors de la répartition du montant.");
+                                }
+                            })
+                            .catch(error => {
+                                console.error('Erreur:', error);
+                                alert("Une erreur s'est produite lors de la communication avec le serveur.");
+                            });
+                        }
+                    } else {
+                        alert("Motif invalide.");
+                    }
+                } else {
+                    alert("Montant invalide.");
+                }
+            });
+        </script>
 {% endblock %}
 

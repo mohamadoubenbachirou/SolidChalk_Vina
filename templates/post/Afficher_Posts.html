@@ -1,0 +1,22 @@
+{% extends 'main.html'%}
+{% load i18n %}    
+{% block content %}
+
+<br>
+<h1>Posts validés </h1>
+<ul>
+    {% for post in posts %}
+    <li>
+        <b>Membre</b>
+        {{post.membre}} <br>
+        <b>Objet</b>
+        {{post.objet}} <br>
+        <b>Date</b>
+        {{post.date}} <br>
+    </li>
+    {% empty %}
+    <li>Aucun post en attente</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

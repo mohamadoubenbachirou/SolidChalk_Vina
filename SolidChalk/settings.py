@@ -14,7 +14,6 @@ from pathlib import Path
 import os
 from django.utils.translation import gettext_lazy as _ 
 from decouple import config
-#import django_heroku
 import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -28,7 +27,7 @@ SECRET_KEY = config('SECRET_KEY')
 DATABASE_URL = config('DATABASE_URL')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['https://solid-rmb5.onrender.com/', '127.0.0.1']
 
@@ -50,12 +49,15 @@ INSTALLED_APPS = [
     'compte',
     'profil',
     'django_filters',
+    #'point_focal',
+    #'etablissement',
 
 
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -63,11 +65,15 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    #"whitenoise.middleware.WhiteNoiseMiddleware",
+    'SolidChalk.middleware.LanguageMiddleware',  # Remplacez 'mon_projet' par le nom de votre projet Django
+    
 ]
 
 ROOT_URLCONF = 'SolidChalk.urls'
-#STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, 'locale'),
+)
 
 TEMPLATES = [
     {
@@ -99,7 +105,7 @@ WSGI_APPLICATION = 'SolidChalk.wsgi.application'
 # }
 
 DATABASES = {
-    'default': dj_database_url.config(default=config('DATABASE_URL'))
+    'default': dj_database_url.parse(config('DATABASE_URL'))
 }
 
 
@@ -121,16 +127,18 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTH_PROFILE_MODULE = 'membre.Membre'
+
+LOGIN_REDIRECT_URL = '/http://127.0.0.1:8000/admin/membre/membre/add/'
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
 LANGUAGE_CODE = 'fr-fr'
 LANGUAGES = [
-     ('en', _('English')),
+     ('en', _('Anglais')),
      ('fr', _('Français')),
  ]
-LANGUAGE_CODE = 'en'
 
 TIME_ZONE = 'UTC'
 
@@ -152,5 +160,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-#django_heroku.settings(locals())
 
+SESSION_COOKIE_SECURE = True
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True

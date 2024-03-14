@@ -1,7 +1,0 @@
-{% extends 'main.html'%}
-
-<form method="post" action="{% url 'change_language' %}">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">{% trans 'Change Language' %}</button>
-</form>

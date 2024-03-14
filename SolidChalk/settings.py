@@ -65,7 +65,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'SolidChalk.middleware.LanguageMiddleware',  # Remplacez 'mon_projet' par le nom de votre projet Django
+    #'SolidChalk.middleware.LanguageMiddleware',  # Remplacez 'mon_projet' par le nom de votre projet Django
     
 ]
 
@@ -161,5 +161,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-SESSION_COOKIE_SECURE = True
-SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+#SESSION_COOKIE_SECURE = True
+#SESSION_EXPIRE_AT_BROWSER_CLOSE = True
